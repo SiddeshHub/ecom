@@ -19,27 +19,26 @@
             background-color: #333;
             color: white;
             position: relative;
-            overflow: hidden; /* Hide any background image overflow */
+            overflow: hidden;
         }
 
-         header .header-content {
+        header .header-content {
             padding: 30px 20px;
             background-image: url('dress/ecommerce-background_img.png');
             background-size: cover;
             background-position: center;
             height: 550px;
-             display: flex;
+            display: flex;
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
             width: 100%;
             box-sizing: border-box;
             position: relative;
-              z-index: 1; /* Ensure the content is above the background */
-            
+            z-index: 1;
         }
 
-    header::before{
+        header::before {
             content: "";
             position: absolute;
             top: 0;
@@ -50,114 +49,150 @@
             z-index: 0;
         }
 
-
-
-
         header h1 {
             margin: 0;
             font-size: 24px;
         }
-      /* Navigation Styles */
-       .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto; /* Center the navbar content */
-         width: 100%;
-     }
 
-
-      .logo a {
-        color: white;
-        text-decoration: none;
-        font-size: 20px;
-    }
-        .logo-section img{
-            height: 70px;
-            width: auto;
-            background-color: transparent;
-        }
-
-    .nav-links {
-         list-style: none;
-        display: flex;
-          margin: 0;
-        padding: 0;
-    }
-
-    .nav-links li {
-        margin-left: 20px;
-    }
-       .nav-links a {
-         color: white;
-          text-decoration: none;
-          transition: color 0.3s ease;
-          display: block;
-         padding: 5px 0;
-
-     }
-
-    .nav-links a:hover {
-           color: #ddd;
-       }
-
-    .hamburger {
-          display: none;
-          cursor: pointer;
-           padding: 10px;
-     }
-
-    .bar {
-         width: 25px;
-          height: 3px;
-        background-color: white;
-        margin: 5px 0;
-          transition: 0.4s;
-     }
-      
-        /* search box section */
-    .search-box {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 20px;
-
-    }
-
-    .search-box input {
-    width: 60%;
-    padding: 12px 15px;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    font-size: 18px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-        max-width: 500px;
-
-    }
-
-    .search-box button {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    margin-left: 15px;
-    border-radius: 25px;
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-        white-space: nowrap;/* Prevent button text from wrapping */
-     }
-
-
-     /* call to action section */
-        .call-to-action{
-        text-align: center;
-            padding-bottom: 20px;
+        /* Navigation Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
             width: 100%;
         }
 
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            display: inline-flex;
+            align-items: center;
+            position: relative;
+            width: auto;
+
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 0px;
+        }
+
+        .logo-section img {
+            height: 70px;/* reduced default size to fit text */
+            width: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            border: 1px solid #fff;
+            object-fit: cover;
+
+        }
+
+        .logo-text-container {
+           position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo span {
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+           font-size: 16px;/* reduced the initial font size*/
+             transition: font-size 0.3s ease;
+            display: block;
+            white-space: pre-line;/* Allows text to wrap */
+        }
+
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 5px 0;
+
+        }
+
+        .nav-links a:hover {
+            color: #ddd;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        /* search box section */
+        .search-box {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 20px;
+
+        }
+
+        .search-box input {
+            width: 60%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            font-size: 18px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+            max-width: 500px;
+
+        }
+
+        .search-box button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin-left: 15px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            white-space: nowrap;
+            /* Prevent button text from wrapping */
+        }
+
+        /* call to action section */
+        .call-to-action {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
 
         .call-to-action h1 {
             font-size: 38px;
@@ -166,13 +201,13 @@
             color: #333;
         }
 
-
         .call-to-action p {
             font-size: 18px;
             margin-bottom: 25px;
             color: #555;
         }
-         .call-to-action button {
+
+        .call-to-action button {
             background-color: #007BFF;
             color: white;
             border: none;
@@ -183,7 +218,6 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-
 
         /* Product Styles */
         .container {
@@ -199,7 +233,8 @@
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-             justify-content: center; /* Center items horizontally */
+            justify-content: center;
+            /* Center items horizontally */
         }
 
         .product {
@@ -207,32 +242,41 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             overflow: hidden;
-            width: 100%; /* Take full width in a row */
-            max-width: 370px; /* Max-width for larger screens */
-            height: auto; /* Adjust height automatically based on content */
+            width: 100%;
+            /* Take full width in a row */
+            max-width: 370px;
+            /* Max-width for larger screens */
+            height: auto;
+            /* Adjust height automatically based on content */
             text-align: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s ease;
             margin: auto;
 
         }
-    @media (min-width: 576px) {
-        .product {
-            width: calc(50% - 10px); /* 2 per row for small screens */
-        }
-    }
-    @media (min-width: 768px) {
-        .product {
-            width: calc(33.33% - 10px); /* 3 per row for medium screens */
-        }
-    }
-     @media (min-width: 992px) {
-         .product {
-            width: calc(25% - 10px); /* 4 per row for large screens */
-        }
-    }
 
-         .product:hover {
+        @media (min-width: 576px) {
+            .product {
+                width: calc(50% - 10px);
+                /* 2 per row for small screens */
+            }
+        }
+
+        @media (min-width: 768px) {
+            .product {
+                width: calc(33.33% - 10px);
+                /* 3 per row for medium screens */
+            }
+        }
+
+        @media (min-width: 992px) {
+            .product {
+                width: calc(25% - 10px);
+                /* 4 per row for large screens */
+            }
+        }
+
+        .product:hover {
             transform: scale(1.05);
         }
 
@@ -277,68 +321,102 @@
         }
 
         /* Responsive navbar styles */
-   @media (max-width: 768px) {
-       .navbar {
-        flex-direction: column; /* Stack items vertically */
-         align-items: flex-start;
-       }
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                /* Stack items vertically */
+                align-items: flex-start;
+            }
 
-        .nav-links {
-            display: none; /* Hide nav links */
-           flex-direction: column;
-            width: 100%;
-            background-color: #333;
-               padding-bottom: 10px;
+            .nav-links {
+                display: none;
+                /* Hide nav links */
+                flex-direction: column;
+                width: 100%;
+                background-color: #333;
+                padding-bottom: 10px;
 
-       }
+            }
 
-        .nav-links.active {
-           display: flex; /* Show on small screens */
-              margin-top: 10px; /* space between logo and nav-links*/
-             width: 100%; /* Take full width */
-       }
+            .nav-links.active {
+                display: flex;
+                /* Show on small screens */
+                margin-top: 10px;
+                /* space between logo and nav-links*/
+                width: 100%;
+                /* Take full width */
+            }
 
-       .nav-links li {
-           margin-left: 0;
-           text-align: center;
+            .nav-links li {
+                margin-left: 0;
+                text-align: center;
 
-       }
+            }
 
-        .hamburger {
-            display: block; /* Show on small screens */
-            margin-top: 5px;
-      }
+            .hamburger {
+                display: block;
+                /* Show on small screens */
+                margin-top: 5px;
+            }
 
-        .hamburger.active .bar:nth-child(1) {
-           transform: translateY(8px) rotate(45deg);
-       }
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
 
-         .hamburger.active .bar:nth-child(2) {
-            opacity: 0;
-       }
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
 
-        .hamburger.active .bar:nth-child(3) {
-           transform: translateY(-8px) rotate(-45deg);
-       }
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
 
+             .logo-section img{
+                  height: 60px;
+            }
 
-      header .header-content{
+            .logo span {
+               font-size: 14px;
+            }
+            header .header-content {
                 height: auto;
-        }
-       
-        .call-to-action h1{
-          font-size: 30px;
-        }
-           .search-box input {
-         font-size: 16px;
-               width: 80%;
+            }
 
-      }
+            .call-to-action h1 {
+                font-size: 30px;
+            }
 
-      .search-box button{
-         font-size: 16px;
-       }
-    }
+            .search-box input {
+                font-size: 16px;
+                width: 80%;
+
+            }
+
+            .search-box button {
+                font-size: 16px;
+            }
+        }
+    @media (min-width: 768px){
+            .logo-section img{
+                  height: 70px;
+            }
+           .logo span {
+              font-size: 16px;
+            }
+        }
+     @media (min-width: 992px){
+            .logo-section img{
+                 height: 70px;
+            }
+        .logo span {
+              font-size: 18px;
+            }
+        }
+        @media (min-width: 1200px){
+           .logo span {
+              font-size: 20px;
+            }
+        }
     </style>
 </head>
 
@@ -346,45 +424,43 @@
     <header>
         <div class="header-content">
             <!-- Responsive Navbar -->
-                <nav class="navbar">
-                   <div class="logo">
-                       <a href="#">
-                          <div class="logo-section">
-                              <img src="dress\Arohana_zen-removebg-preview.png" alt="Store Logo">
-                          </div>
-                      </a>
-                   </div>
-                    <ul class="nav-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Products</a></li>
-                        <li><a href="#">Categories</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                     <div class="hamburger">
-                        <div class="bar"></div>
-                         <div class="bar"></div>
-                         <div class="bar"></div>
-                     </div>
-                 </nav>
-             <!-- Search Box Section -->
-              <div class="search-box">
-                 <input type="text" placeholder="Search products...">
-                 <button>Search</button>
-               </div>
-             <!-- Call-to-Action Section -->
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="#">
+                        <div class="logo-section">
+                            <img src="dress\Arohana_zen-removebg-preview.png" alt="Store Logo">
+                            <div class="logo-text-container">
+                                <span>Arohana Zen</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </nav>
+            <!-- Search Box Section -->
+            <div class="search-box">
+                <input type="text" placeholder="Search products...">
+                <button>Search</button>
+            </div>
+            <!-- Call-to-Action Section -->
             <div class="call-to-action">
                 <h1>All in One Click</h1>
                 <p>Discover the best deals and exclusive collections</p>
                 <button>Shop Now</button>
-             </div>
+            </div>
         </div>
     </header>
-
-
-
-    <!-- Spacer div for gap below header -->
-    <div style="height: 40px;"></div>
 
 
 
@@ -392,262 +468,262 @@
     <div class="container">
         <div class="products">
 
-                <div class="product" >
-                    <img src="dress\1700034409594-18.jpeg" alt="Ice Cream">
-                    <h4>i phone 15pro</h4>
-                    <p>Apple Trade In.</p>
-                    <p class="price">80000.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\images (20).jpeg" alt="Ice Cream">
-                    <h4>i phone 15pro</h4>
-                    <p>Desert Titanium.</p>
-                    <p class="price">85000.00</p>
-                    <button>Add to Cart</button>
-                </div>
+            <div class="product">
+                <img src="dress\1700034409594-18.jpeg" alt="Ice Cream">
+                <h4>i phone 15pro</h4>
+                <p>Apple Trade In.</p>
+                <p class="price">80000.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\images (20).jpeg" alt="Ice Cream">
+                <h4>i phone 15pro</h4>
+                <p>Desert Titanium.</p>
+                <p class="price">85000.00</p>
+                <button>Add to Cart</button>
+            </div>
 
-                <div class="product">
-                    <img src="dress\download (1).jpeg" alt="Pasta">
-                    <h4>vivo</h4>
-                    <p>Vivo V30 5G Smartphone.</p>
-                    <p class="price">22000.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\images (7).jpeg" alt="Ice Cream">
-                    <h4>vivo T3 Lite</h4>
-                    <p>Vivo T3 5G.</p>
-                    <p class="price">16000.00</p>
-                    <button>Add to Cart</button>
-                </div>
+            <div class="product">
+                <img src="dress\download (1).jpeg" alt="Pasta">
+                <h4>vivo</h4>
+                <p>Vivo V30 5G Smartphone.</p>
+                <p class="price">22000.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\images (7).jpeg" alt="Ice Cream">
+                <h4>vivo T3 Lite</h4>
+                <p>Vivo T3 5G.</p>
+                <p class="price">16000.00</p>
+                <button>Add to Cart</button>
+            </div>
 
-                <div class="product">
-                    <img src="dress\images (6).jpeg" alt="Dessert">
-                    <h4>Redmi 13C</h4>
-                    <p>Lag Free Experience.</p>
-                    <p class="price">15000.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\71-laFJE4GL.jpg" alt="Ice Cream">
-                    <h4>LG UltraPC</h4>
-                    <p>"16" Lightweight Anti-Glare Display.</p>
-                    <p class="price">45000.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\612+isKcLVL.jpg" alt="Ice Cream">
-                    <h4>LG Gram</h4>
-                    <p> Pro 16" 2in1 Laptop.</p>
-                    <p class="price">58000.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\1338694.png" alt="Ice Cream">
-                    <h4>Dell</h4>
-                    <p>Inspiron 3530 13th Gen Laptop.</p>
-                    <p class="price">52000.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\laptop-with-screen-hd-8k-wallpaper-background-stock-photographic-image_915071-48087.avif"
-                        alt="Ice Cream">
-                    <h4>Dell</h4>
-                    <p>Inspiron 3535, AMD Ryzen.</p>
-                    <p class="price">60000.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\asus-zenbook-14-ultra-thin-and-light-laptop-4-way-nanoedge-14-full-hd-intel-core-i7-8565u-8gb-lpddr3-ram-512gb-nvme-pcie-ssd-wi-fi-5-windows-10-silver-blue-ux431fa-es74-179008469-q9czu.avif"
-                        alt="Ice Cream">
-                    <h4>Dell</h4>
-                    <p> Inspiron 5430 Notebook Laptop.</p>
-                    <p class="price">82000.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\shopping (1).webp" alt="Cupcake">
-                    <h4>Black printed dress</h4>
-                    <p>Black printed dress with tiered dress.</p>
-                    <p class="price">1897.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\images (2).jpeg" alt="Ice Cream">
-                    <h4>HERE&NOW</h4>
-                    <p>Boys Opaque Checked Casual Shirt.</p>
-                    <p class="price">800.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\shopping.webp" alt="Ice Cream">
-                    <h4>Pink Dress</h4>
-                    <p>Women fit and Flare Pink Dress.</p>
-                    <p class="price">650.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\images (3).jpeg" alt="Ice Cream">
-                    <h4>INDIAN TERRAIN BOYS</h4>
-                    <p>Printed Shirt with Spread Collar.</p>
-                    <p class="price">550.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\istockphoto-1034283778-612x612.jpg" alt="Ice Cream">
-                    <h4>JACK & JONES</h4>
-                    <p>Cotton Shirt with Spread Collar.</p>
-                    <p class="price">1200.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\d6588eef563cd7f37a292b0d25403cbf.jpg" alt="Ice Cream">
-                    <h4>Gold Chain</h4>
-                    <p>Designs Under 20 Grams Weight.</p>
-                    <p class="price">55000.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\8803fb33d066d3115465aadfc963ee7a.jpg" alt="Ice Cream">
-                    <h4>Sukkhi Fascinate Blooming</h4>
-                    <p>Gold Plated Necklace Set for Women.</p>
-                    <p class="price">75000.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\gold-bangles-gemstones-market-row-ornate-each-set-colorful-rests-display-shelf-326086623.webp"
-                        alt="Ice Cream">
-                    <h4>Gold bangles</h4>
-                    <p> 47.5cm x 31.7cm .</p>
-                    <p class="price">88500.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\images (13).jpeg" alt="Ice Cream">
-                    <h4>Gold Chandan Haar</h4>
-                    <p> Gold Chandan Haar Collections.</p>
-                    <p class="price">92150.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\images (14).jpeg" alt="Ice Cream">
-                    <h4>Gold Rani Haar</h4>
-                    <p> Gold Chandan Haar Collections.</p>
-                    <p class="price">92300.00</p>
-                    <button>Add to Cart</button>
-                </div>
+            <div class="product">
+                <img src="dress\images (6).jpeg" alt="Dessert">
+                <h4>Redmi 13C</h4>
+                <p>Lag Free Experience.</p>
+                <p class="price">15000.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\71-laFJE4GL.jpg" alt="Ice Cream">
+                <h4>LG UltraPC</h4>
+                <p>"16" Lightweight Anti-Glare Display.</p>
+                <p class="price">45000.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\612+isKcLVL.jpg" alt="Ice Cream">
+                <h4>LG Gram</h4>
+                <p>Pro 16" 2in1 Laptop.</p>
+                <p class="price">58000.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\1338694.png" alt="Ice Cream">
+                <h4>Dell</h4>
+                <p>Inspiron 3530 13th Gen Laptop.</p>
+                <p class="price">52000.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\laptop-with-screen-hd-8k-wallpaper-background-stock-photographic-image_915071-48087.avif"
+                    alt="Ice Cream">
+                <h4>Dell</h4>
+                <p>Inspiron 3535, AMD Ryzen.</p>
+                <p class="price">60000.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\asus-zenbook-14-ultra-thin-and-light-laptop-4-way-nanoedge-14-full-hd-intel-core-i7-8565u-8gb-lpddr3-ram-512gb-nvme-pcie-ssd-wi-fi-5-windows-10-silver-blue-ux431fa-es74-179008469-q9czu.avif"
+                    alt="Ice Cream">
+                <h4>Dell</h4>
+                <p>Inspiron 5430 Notebook Laptop.</p>
+                <p class="price">82000.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\shopping (1).webp" alt="Cupcake">
+                <h4>Black printed dress</h4>
+                <p>Black printed dress with tiered dress.</p>
+                <p class="price">1897.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\images (2).jpeg" alt="Ice Cream">
+                <h4>HERE&NOW</h4>
+                <p>Boys Opaque Checked Casual Shirt.</p>
+                <p class="price">800.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\shopping.webp" alt="Ice Cream">
+                <h4>Pink Dress</h4>
+                <p>Women fit and Flare Pink Dress.</p>
+                <p class="price">650.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\images (3).jpeg" alt="Ice Cream">
+                <h4>INDIAN TERRAIN BOYS</h4>
+                <p>Printed Shirt with Spread Collar.</p>
+                <p class="price">550.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\istockphoto-1034283778-612x612.jpg" alt="Ice Cream">
+                <h4>JACK & JONES</h4>
+                <p>Cotton Shirt with Spread Collar.</p>
+                <p class="price">1200.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\d6588eef563cd7f37a292b0d25403cbf.jpg" alt="Ice Cream">
+                <h4>Gold Chain</h4>
+                <p>Designs Under 20 Grams Weight.</p>
+                <p class="price">55000.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\8803fb33d066d3115465aadfc963ee7a.jpg" alt="Ice Cream">
+                <h4>Sukkhi Fascinate Blooming</h4>
+                <p>Gold Plated Necklace Set for Women.</p>
+                <p class="price">75000.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\gold-bangles-gemstones-market-row-ornate-each-set-colorful-rests-display-shelf-326086623.webp"
+                    alt="Ice Cream">
+                <h4>Gold bangles</h4>
+                <p>47.5cm x 31.7cm .</p>
+                <p class="price">88500.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\images (13).jpeg" alt="Ice Cream">
+                <h4>Gold Chandan Haar</h4>
+                <p>Gold Chandan Haar Collections.</p>
+                <p class="price">92150.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\images (14).jpeg" alt="Ice Cream">
+                <h4>Gold Rani Haar</h4>
+                <p>Gold Chandan Haar Collections.</p>
+                <p class="price">92300.00</p>
+                <button>Add to Cart</button>
+            </div>
 
-                <div class="product">
-                    <img src="dress\hd-gustavo-shoes-825788.webp" alt="Ice Cream">
-                    <h4>Inquiry </h4>
-                    <p>Regarding Specific Footwear.</p>
-                    <p class="price">1500</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\images (10).jpeg" alt="Ice Cream">
-                    <h4>SPARX</h4>
-                    <p>Men Black Sports Sandals.</p>
-                    <p class="price">800.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\images (11).jpeg" alt="Ice Cream">
-                    <h4>SPARX </h4>
-                    <p>Running Shoes.</p>
-                    <p class="price">1100.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\images (12).jpeg" alt="Ice Cream">
-                    <h4>Palermo</h4>
-                    <p> Lth Unisex Sneakers.</p>
-                    <p class="price">1800.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\brown-leather-sandals-product-showcase-r7zqnbq8r6n782wf.png"
-                        alt="Ice Cream">
-                    <h4>Adi</h4>
-                    <p>Men Adi Stridx Running Shoes.</p>
-                    <p class="price">2500.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\images (15).jpeg" alt="Ice Cream">
-                    <h4>Feltro Sheesham</h4>
-                    <p>Wood Sofa Bed With Storage.</p>
-                    <p class="price">2200.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\images (18).jpeg" alt="Ice Cream">
-                    <h4>Sofa Set Exeter</h4>
-                    <p> Couch Design.</p>
-                    <p class="price">38000.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\images (19).jpeg" alt="Ice Cream">
-                    <h4>Ice Cream</h4>
-                    <p>Chilled and creamy ice cream.</p>
-                    <p class="price">28000.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\unique-living-room-modern-style-interior-with-poster-frame-design-red-velvet-armchair-elegant-furniture-decoration-pesronal-accessories-home-decor_431307-1026.avif"
-                        alt="Ice Cream">
-                    <h4>Luxury and Elegance</h4>
-                    <p>Living Room Design.</p>
-                    <p class="price">32000.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\istockphoto-1285065780-612x612.jpg" alt="Ice Cream">
-                    <h4>Modern Furniture</h4>
-                    <p>Living Room Design.</p>
-                    <p class="price">22500.00</p>
-                    <button>Add to Cart</button>
-                </div>
+            <div class="product">
+                <img src="dress\hd-gustavo-shoes-825788.webp" alt="Ice Cream">
+                <h4>Inquiry </h4>
+                <p>Regarding Specific Footwear.</p>
+                <p class="price">1500</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\images (10).jpeg" alt="Ice Cream">
+                <h4>SPARX</h4>
+                <p>Men Black Sports Sandals.</p>
+                <p class="price">800.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\images (11).jpeg" alt="Ice Cream">
+                <h4>SPARX </h4>
+                <p>Running Shoes.</p>
+                <p class="price">1100.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\images (12).jpeg" alt="Ice Cream">
+                <h4>Palermo</h4>
+                <p>Lth Unisex Sneakers.</p>
+                <p class="price">1800.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\brown-leather-sandals-product-showcase-r7zqnbq8r6n782wf.png"
+                    alt="Ice Cream">
+                <h4>Adi</h4>
+                <p>Men Adi Stridx Running Shoes.</p>
+                <p class="price">2500.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\images (15).jpeg" alt="Ice Cream">
+                <h4>Feltro Sheesham</h4>
+                <p>Wood Sofa Bed With Storage.</p>
+                <p class="price">2200.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\images (18).jpeg" alt="Ice Cream">
+                <h4>Sofa Set Exeter</h4>
+                <p>Couch Design.</p>
+                <p class="price">38000.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\images (19).jpeg" alt="Ice Cream">
+                <h4>Ice Cream</h4>
+                <p>Chilled and creamy ice cream.</p>
+                <p class="price">28000.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\unique-living-room-modern-style-interior-with-poster-frame-design-red-velvet-armchair-elegant-furniture-decoration-pesronal-accessories-home-decor_431307-1026.avif"
+                    alt="Ice Cream">
+                <h4>Luxury and Elegance</h4>
+                <p>Living Room Design.</p>
+                <p class="price">32000.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\istockphoto-1285065780-612x612.jpg" alt="Ice Cream">
+                <h4>Modern Furniture</h4>
+                <p>Living Room Design.</p>
+                <p class="price">22500.00</p>
+                <button>Add to Cart</button>
+            </div>
 
 
-                <div class="product">
-                    <img src="dress\17tootired-grilled-cheese-articleLarge.webp" alt="Sandwich">
-                    <h4>Grilled Cheese Sandwich</h4>
-                    <p>Deliciously grilled with melted cheese.</p>
-                    <p class="price">180.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\images (4).jpeg" alt="Burger">
-                    <h4>Cheeseburger</h4>
-                    <p>Juicy burger with melted cheese.</p>
-                    <p class="price">170.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\Mini_Potato_Skins_005-2c0f3c0747254639a8f72ea37e1819fd.jpg"
-                        alt="Potato Skins">
-                    <h4>Mini Potato Skins</h4>
-                    <p>Crispy and loaded with toppings.</p>
-                    <p class="price">90.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\140430115517-06-comfort-foods.jpg" alt="Comfort Food">
-                    <h4>Mac and Cheese</h4>
-                    <p>Rich and creamy comfort food.</p>
-                    <p class="price">110.00</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="dress\burger-with-melted-cheese.jpg" alt="Cheesy Burger">
-                    <h4>Burger with Cheese</h4>
-                    <p>Perfectly grilled with cheese.</p>
-                    <p class="price">99.00</p>
-                    <button>Add to Cart</button>
-                </div>
+            <div class="product">
+                <img src="dress\17tootired-grilled-cheese-articleLarge.webp" alt="Sandwich">
+                <h4>Grilled Cheese Sandwich</h4>
+                <p>Deliciously grilled with melted cheese.</p>
+                <p class="price">180.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\images (4).jpeg" alt="Burger">
+                <h4>Cheeseburger</h4>
+                <p>Juicy burger with melted cheese.</p>
+                <p class="price">170.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\Mini_Potato_Skins_005-2c0f3c0747254639a8f72ea37e1819fd.jpg"
+                    alt="Potato Skins">
+                <h4>Mini Potato Skins</h4>
+                <p>Crispy and loaded with toppings.</p>
+                <p class="price">90.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\140430115517-06-comfort-foods.jpg" alt="Comfort Food">
+                <h4>Mac and Cheese</h4>
+                <p>Rich and creamy comfort food.</p>
+                <p class="price">110.00</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="dress\burger-with-melted-cheese.jpg" alt="Cheesy Burger">
+                <h4>Burger with Cheese</h4>
+                <p>Perfectly grilled with cheese.</p>
+                <p class="price">99.00</p>
+                <button>Add to Cart</button>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
