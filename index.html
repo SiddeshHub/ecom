@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Commerce Website</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -17,46 +18,221 @@
         header {
             background-color: #333;
             color: white;
-            padding: 10px 20px;
-            text-align: center;
+            position: relative;
+            overflow: hidden; /* Hide any background image overflow */
         }
+
+         header .header-content {
+            padding: 30px 20px;
+            background-image: url('dress/ecommerce-background_img.png');
+            background-size: cover;
+            background-position: center;
+            height: 550px;
+             display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            position: relative;
+              z-index: 1; /* Ensure the content is above the background */
+            
+        }
+
+    header::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 0;
+        }
+
+
+
 
         header h1 {
             margin: 0;
             font-size: 24px;
         }
+      /* Navigation Styles */
+       .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto; /* Center the navbar content */
+         width: 100%;
+     }
 
-        /* .container {
+
+      .logo a {
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+    }
+        .logo-section img{
+            height: 70px;
+            width: auto;
+            background-color: transparent;
+        }
+
+    .nav-links {
+         list-style: none;
+        display: flex;
+          margin: 0;
+        padding: 0;
+    }
+
+    .nav-links li {
+        margin-left: 20px;
+    }
+       .nav-links a {
+         color: white;
+          text-decoration: none;
+          transition: color 0.3s ease;
+          display: block;
+         padding: 5px 0;
+
+     }
+
+    .nav-links a:hover {
+           color: #ddd;
+       }
+
+    .hamburger {
+          display: none;
+          cursor: pointer;
+           padding: 10px;
+     }
+
+    .bar {
+         width: 25px;
+          height: 3px;
+        background-color: white;
+        margin: 5px 0;
+          transition: 0.4s;
+     }
+      
+        /* search box section */
+    .search-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+
+    }
+
+    .search-box input {
+    width: 60%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 18px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+        max-width: 500px;
+
+    }
+
+    .search-box button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin-left: 15px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+        white-space: nowrap;/* Prevent button text from wrapping */
+     }
+
+
+     /* call to action section */
+        .call-to-action{
+        text-align: center;
+            padding-bottom: 20px;
+            width: 100%;
+        }
+
+
+        .call-to-action h1 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+
+        .call-to-action p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #555;
+        }
+         .call-to-action button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+
+        /* Product Styles */
+        .container {
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        } */
+        }
 
-        /* .products {
+        .products {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            justify-content: center;
-        } */
+             justify-content: center; /* Center items horizontally */
+        }
 
         .product {
             background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 8px;
             overflow: hidden;
-            width: 370px;
-            height: 450px;
-            /* Adjust this value as per your requirement */
+            width: 100%; /* Take full width in a row */
+            max-width: 370px; /* Max-width for larger screens */
+            height: auto; /* Adjust height automatically based on content */
             text-align: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s ease;
+            margin: auto;
+
         }
+    @media (min-width: 576px) {
+        .product {
+            width: calc(50% - 10px); /* 2 per row for small screens */
+        }
+    }
+    @media (min-width: 768px) {
+        .product {
+            width: calc(33.33% - 10px); /* 3 per row for medium screens */
+        }
+    }
+     @media (min-width: 992px) {
+         .product {
+            width: calc(25% - 10px); /* 4 per row for large screens */
+        }
+    }
 
-
-        .product:hover {
+         .product:hover {
             transform: scale(1.05);
         }
 
@@ -64,7 +240,6 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
-
         }
 
         .product h4 {
@@ -94,69 +269,128 @@
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s;
+            width: 80%;
         }
 
         .product button:hover {
             background-color: #2980b9;
         }
+
+        /* Responsive navbar styles */
+   @media (max-width: 768px) {
+       .navbar {
+        flex-direction: column; /* Stack items vertically */
+         align-items: flex-start;
+       }
+
+        .nav-links {
+            display: none; /* Hide nav links */
+           flex-direction: column;
+            width: 100%;
+            background-color: #333;
+               padding-bottom: 10px;
+
+       }
+
+        .nav-links.active {
+           display: flex; /* Show on small screens */
+              margin-top: 10px; /* space between logo and nav-links*/
+             width: 100%; /* Take full width */
+       }
+
+       .nav-links li {
+           margin-left: 0;
+           text-align: center;
+
+       }
+
+        .hamburger {
+            display: block; /* Show on small screens */
+            margin-top: 5px;
+      }
+
+        .hamburger.active .bar:nth-child(1) {
+           transform: translateY(8px) rotate(45deg);
+       }
+
+         .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+       }
+
+        .hamburger.active .bar:nth-child(3) {
+           transform: translateY(-8px) rotate(-45deg);
+       }
+
+
+      header .header-content{
+                height: auto;
+        }
+       
+        .call-to-action h1{
+          font-size: 30px;
+        }
+           .search-box input {
+         font-size: 16px;
+               width: 80%;
+
+      }
+
+      .search-box button{
+         font-size: 16px;
+       }
+    }
     </style>
 </head>
 
 <body>
-    <header style="padding: 30px 80px; background-image: url('dress/ecommerce-background_img.png'); background-size: cover; background-position: center; height: 550px; color: #333; width: 100%; box-sizing: border-box; position: relative;">
-        <!-- Logo and Navigation Section -->
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px;">
-            <!-- Logo Section -->
-            <div style="flex-shrink: 0;">
-                <img src="dress\Arohana_zen-removebg-preview.png" alt="Store Logo" style="height: 70px; width: auto; background-color: transparent;">
-            </div>
-            
-            
-            
-            <!-- Navigation Section -->
-            <nav style="flex-grow: 1; margin-left: 30px;">
-                <ul style="display: flex; list-style: none; gap: 35px; padding: 0; margin: 0; font-size: 18px; font-weight: 600;">
-                    <li><a href="#" style="text-decoration: none; color: #007BFF; transition: color 0.3s ease;">Home</a></li>
-                    <li><a href="#" style="text-decoration: none; color: #007BFF; transition: color 0.3s ease;">Products</a></li>
-                    <li><a href="#" style="text-decoration: none; color: #007BFF; transition: color 0.3s ease;">Categories</a></li>
-                    <li><a href="#" style="text-decoration: none; color: #007BFF; transition: color 0.3s ease;">About Us</a></li>
-                    <li><a href="#" style="text-decoration: none; color: #007BFF; transition: color 0.3s ease;">Contact Us</a></li>
-                </ul>
-            </nav>            
-        </div>
-        
-        <!-- Search Box Section -->
-        <div style="display: flex; justify-content: center; margin-bottom: 30px;">
-            <input type="text" placeholder="Search products..." style="width: 60%; padding: 12px 15px; border: 1px solid #ccc; border-radius: 25px; font-size: 18px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);">
-            <button style="background-color: #007BFF; color: white; border: none; padding: 12px 25px; margin-left: 15px; border-radius: 25px; font-size: 18px; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease;">
-                Search
-            </button>
-        </div>
-        
-        <!-- Call-to-Action Section -->
-        <div style="text-align: center;">
-            <h1 style="font-size: 48px; font-weight: 800; margin-bottom: 15px; color: #333;">All in One Click</h1>
-            <p style="font-size: 20px; margin-bottom: 25px; color: #555;">Discover the best deals and exclusive collections</p>
-            <button style="background-color: #007BFF; color: white; border: none; padding: 14px 40px; border-radius: 30px; font-size: 18px; font-weight: 700; cursor: pointer; transition: background-color 0.3s ease;">
-                Shop Now
-            </button>
+    <header>
+        <div class="header-content">
+            <!-- Responsive Navbar -->
+                <nav class="navbar">
+                   <div class="logo">
+                       <a href="#">
+                          <div class="logo-section">
+                              <img src="dress\Arohana_zen-removebg-preview.png" alt="Store Logo">
+                          </div>
+                      </a>
+                   </div>
+                    <ul class="nav-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                     <div class="hamburger">
+                        <div class="bar"></div>
+                         <div class="bar"></div>
+                         <div class="bar"></div>
+                     </div>
+                 </nav>
+             <!-- Search Box Section -->
+              <div class="search-box">
+                 <input type="text" placeholder="Search products...">
+                 <button>Search</button>
+               </div>
+             <!-- Call-to-Action Section -->
+            <div class="call-to-action">
+                <h1>All in One Click</h1>
+                <p>Discover the best deals and exclusive collections</p>
+                <button>Shop Now</button>
+             </div>
         </div>
     </header>
-    
-    
-    
-    
+
+
+
     <!-- Spacer div for gap below header -->
     <div style="height: 40px;"></div>
 
 
 
 
-
-
     <div class="container">
         <div class="products">
-            <div style="display: flex;">
 
                 <div class="product" >
                     <img src="dress\1700034409594-18.jpeg" alt="Ice Cream">
@@ -195,8 +429,6 @@
                     <p class="price">15000.00</p>
                     <button>Add to Cart</button>
                 </div>
-            </div>
-            <div style="display: flex;">
                 <div class="product">
                     <img src="dress\71-laFJE4GL.jpg" alt="Ice Cream">
                     <h4>LG UltraPC</h4>
@@ -234,8 +466,6 @@
                     <p class="price">82000.00</p>
                     <button>Add to Cart</button>
                 </div>
-            </div>
-            <div style="display: flex;">
                 <div class="product">
                     <img src="dress\shopping (1).webp" alt="Cupcake">
                     <h4>Black printed dress</h4>
@@ -271,9 +501,6 @@
                     <p class="price">1200.00</p>
                     <button>Add to Cart</button>
                 </div>
-
-            </div>
-            <div style="display: flex;">
                 <div class="product">
                     <img src="dress\d6588eef563cd7f37a292b0d25403cbf.jpg" alt="Ice Cream">
                     <h4>Gold Chain</h4>
@@ -310,8 +537,6 @@
                     <p class="price">92300.00</p>
                     <button>Add to Cart</button>
                 </div>
-            </div>
-            <div style="display: flex;">
 
                 <div class="product">
                     <img src="dress\hd-gustavo-shoes-825788.webp" alt="Ice Cream">
@@ -349,8 +574,6 @@
                     <p class="price">2500.00</p>
                     <button>Add to Cart</button>
                 </div>
-            </div>
-            <div style="display: flex;">
                 <div class="product">
                     <img src="dress\images (15).jpeg" alt="Ice Cream">
                     <h4>Feltro Sheesham</h4>
@@ -387,9 +610,8 @@
                     <p class="price">22500.00</p>
                     <button>Add to Cart</button>
                 </div>
-            </div>
 
-            <div style="display: flex;">
+
                 <div class="product">
                     <img src="dress\17tootired-grilled-cheese-articleLarge.webp" alt="Sandwich">
                     <h4>Grilled Cheese Sandwich</h4>
@@ -426,9 +648,9 @@
                     <p class="price">99.00</p>
                     <button>Add to Cart</button>
                 </div>
-            </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
